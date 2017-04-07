@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Photos
+import FirebaseAuth
 
 class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CameraVCDelegate {
 	// MARK: View Controller Life Cycle
@@ -72,6 +73,13 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 			self.configureSession()
 		}
 	}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard FIRAuth.auth()?.currentUser != nil else {
+            performSegue(withIdentifier: "LoginVC", sender: nil)
+            return
+        }
+    }
     
     func shouldEnableCameraUI(enabled: Bool) {
         cameraButton.isEnabled = enabled

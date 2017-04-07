@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B3ABE1E2F1300D94C43EE7D /* Pods_Chatapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6DD582EA2A67B606E9332 /* Pods_Chatapp.framework */; };
+		8E48FD401E97DAEB0095736C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48FD3F1E97DAEB0095736C /* AuthService.swift */; };
+		8E48FD421E980CD10095736C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E48FD411E980CD10095736C /* DataService.swift */; };
 		8ED576CA1E969917008252C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576C91E969917008252C8 /* AppDelegate.swift */; };
 		8ED576D11E969917008252C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576D01E969917008252C8 /* Assets.xcassets */; };
 		8ED576D41E969917008252C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576D21E969917008252C8 /* LaunchScreen.storyboard */; };
@@ -19,11 +21,14 @@
 		8ED576EA1E972198008252C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576E91E972198008252C8 /* GoogleService-Info.plist */; };
 		8ED576EC1E973082008252C8 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576EB1E973082008252C8 /* RoundTextField.swift */; };
 		8ED576EE1E9738B9008252C8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576ED1E9738B9008252C8 /* RoundedButton.swift */; };
+		8ED576F01E973CB6008252C8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576EF1E973CB6008252C8 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23A6DD582EA2A67B606E9332 /* Pods_Chatapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chatapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		726CF5806FAF3E14418E1695 /* Pods-Chatapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chatapp/Pods-Chatapp.debug.xcconfig"; sourceTree = "<group>"; };
+		8E48FD3F1E97DAEB0095736C /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		8E48FD411E980CD10095736C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8ED576C61E969917008252C8 /* Chatapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED576C91E969917008252C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ED576D01E969917008252C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		8ED576E91E972198008252C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8ED576EB1E973082008252C8 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		8ED576ED1E9738B9008252C8 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		8ED576EF1E973CB6008252C8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		EFF2DB73A4CE17EBD445B94D /* Pods-Chatapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chatapp/Pods-Chatapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +66,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E48FD3E1E97DAC40095736C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8E48FD3F1E97DAEB0095736C /* AuthService.swift */,
+				8E48FD411E980CD10095736C /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		8ED576BD1E969917008252C8 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +96,7 @@
 		8ED576C81E969917008252C8 /* Chatapp */ = {
 			isa = PBXGroup;
 			children = (
+				8E48FD3E1E97DAC40095736C /* Services */,
 				8ED576E61E96F31E008252C8 /* Protocols */,
 				8ED576E31E96BDC4008252C8 /* Model */,
 				8ED576E21E96BDBE008252C8 /* Controller */,
@@ -110,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED576DC1E96BD6F008252C8 /* CameraViewController.swift */,
+				8ED576EF1E973CB6008252C8 /* LoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -265,11 +282,14 @@
 			files = (
 				8ED576DF1E96BD6F008252C8 /* CameraViewController.swift in Sources */,
 				8ED576E81E96F355008252C8 /* CameraVCDelegate.swift in Sources */,
+				8ED576F01E973CB6008252C8 /* LoginVC.swift in Sources */,
+				8E48FD401E97DAEB0095736C /* AuthService.swift in Sources */,
 				8ED576CA1E969917008252C8 /* AppDelegate.swift in Sources */,
 				8ED576E01E96BD6F008252C8 /* PhotoCaptureDelegate.swift in Sources */,
 				8ED576EE1E9738B9008252C8 /* RoundedButton.swift in Sources */,
 				8ED576EC1E973082008252C8 /* RoundTextField.swift in Sources */,
 				8ED576DE1E96BD6F008252C8 /* PreviewView.swift in Sources */,
+				8E48FD421E980CD10095736C /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

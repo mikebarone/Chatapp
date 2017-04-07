@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QNh-MV-1kT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="QAK-1z-SnP">
             <objects>
-                <viewController id="QNh-MV-1kT" sceneMemberID="viewController">
+                <viewController id="QNh-MV-1kT" customClass="LoginVC" customModule="Chatapp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdA-qg-401"/>
                         <viewControllerLayoutGuide type="bottom" id="TX8-hX-HZC"/>
@@ -107,6 +107,9 @@
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="QNh-MV-1kT" eventType="touchUpInside" id="O0m-Zt-9NJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,10 +132,14 @@
                             <constraint firstItem="GPC-fh-qQH" firstAttribute="top" secondItem="SuF-BH-QoA" secondAttribute="bottom" constant="20" id="ylA-BV-ckr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="SuF-BH-QoA" id="77I-0Z-cnh"/>
+                        <outlet property="passwordField" destination="GPC-fh-qQH" id="AaV-gH-C1u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPq-lK-oB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426.4000000000001" y="-628.33583208395805"/>
+            <point key="canvasLocation" x="-1591" y="-615"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -313,6 +320,7 @@
                         <outlet property="previewView" destination="3eR-Rn-XpZ" id="e7I-nu-L6j"/>
                         <outlet property="recordButton" destination="eRT-dK-6dM" id="iqk-en-NsW"/>
                         <outlet property="resumeButton" destination="FZr-Ip-7WL" id="tX5-Sx-rQK"/>
+                        <segue destination="QNh-MV-1kT" kind="presentation" identifier="LoginVC" id="O2W-lr-KbR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
