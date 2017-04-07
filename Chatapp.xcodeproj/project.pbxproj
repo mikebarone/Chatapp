@@ -17,6 +17,8 @@
 		8ED576E51E96CB74008252C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576E41E96CB74008252C8 /* Main.storyboard */; };
 		8ED576E81E96F355008252C8 /* CameraVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576E71E96F355008252C8 /* CameraVCDelegate.swift */; };
 		8ED576EA1E972198008252C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576E91E972198008252C8 /* GoogleService-Info.plist */; };
+		8ED576EC1E973082008252C8 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576EB1E973082008252C8 /* RoundTextField.swift */; };
+		8ED576EE1E9738B9008252C8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576ED1E9738B9008252C8 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		8ED576E41E96CB74008252C8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8ED576E71E96F355008252C8 /* CameraVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVCDelegate.swift; sourceTree = "<group>"; };
 		8ED576E91E972198008252C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8ED576EB1E973082008252C8 /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
+		8ED576ED1E9738B9008252C8 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		EFF2DB73A4CE17EBD445B94D /* Pods-Chatapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chatapp/Pods-Chatapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				8ED576DB1E96BD6F008252C8 /* PreviewView.swift */,
+				8ED576EB1E973082008252C8 /* RoundTextField.swift */,
+				8ED576ED1E9738B9008252C8 /* RoundedButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				8ED576E81E96F355008252C8 /* CameraVCDelegate.swift in Sources */,
 				8ED576CA1E969917008252C8 /* AppDelegate.swift in Sources */,
 				8ED576E01E96BD6F008252C8 /* PhotoCaptureDelegate.swift in Sources */,
+				8ED576EE1E9738B9008252C8 /* RoundedButton.swift in Sources */,
+				8ED576EC1E973082008252C8 /* RoundTextField.swift in Sources */,
 				8ED576DE1E96BD6F008252C8 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
