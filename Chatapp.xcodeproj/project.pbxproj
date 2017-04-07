@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		8ED576CA1E969917008252C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576C91E969917008252C8 /* AppDelegate.swift */; };
-		8ED576CC1E969917008252C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576CB1E969917008252C8 /* ViewController.swift */; };
-		8ED576CF1E969917008252C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576CD1E969917008252C8 /* Main.storyboard */; };
 		8ED576D11E969917008252C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576D01E969917008252C8 /* Assets.xcassets */; };
 		8ED576D41E969917008252C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576D21E969917008252C8 /* LaunchScreen.storyboard */; };
+		8ED576DE1E96BD6F008252C8 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576DB1E96BD6F008252C8 /* PreviewView.swift */; };
+		8ED576DF1E96BD6F008252C8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576DC1E96BD6F008252C8 /* CameraViewController.swift */; };
+		8ED576E01E96BD6F008252C8 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576DD1E96BD6F008252C8 /* PhotoCaptureDelegate.swift */; };
+		8ED576E51E96CB74008252C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ED576E41E96CB74008252C8 /* Main.storyboard */; };
+		8ED576E81E96F355008252C8 /* CameraVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED576E71E96F355008252C8 /* CameraVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8ED576C61E969917008252C8 /* Chatapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED576C91E969917008252C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8ED576CB1E969917008252C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8ED576CE1E969917008252C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8ED576D01E969917008252C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ED576D31E969917008252C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ED576D51E969917008252C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ED576DB1E96BD6F008252C8 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		8ED576DC1E96BD6F008252C8 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		8ED576DD1E96BD6F008252C8 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		8ED576E41E96CB74008252C8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8ED576E71E96F355008252C8 /* CameraVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVCDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		8ED576C81E969917008252C8 /* Chatapp */ = {
 			isa = PBXGroup;
 			children = (
+				8ED576E61E96F31E008252C8 /* Protocols */,
+				8ED576E31E96BDC4008252C8 /* Model */,
+				8ED576E21E96BDBE008252C8 /* Controller */,
+				8ED576E11E96BDB8008252C8 /* View */,
+				8ED576DD1E96BD6F008252C8 /* PhotoCaptureDelegate.swift */,
 				8ED576C91E969917008252C8 /* AppDelegate.swift */,
-				8ED576CB1E969917008252C8 /* ViewController.swift */,
-				8ED576CD1E969917008252C8 /* Main.storyboard */,
 				8ED576D01E969917008252C8 /* Assets.xcassets */,
+				8ED576E41E96CB74008252C8 /* Main.storyboard */,
 				8ED576D21E969917008252C8 /* LaunchScreen.storyboard */,
 				8ED576D51E969917008252C8 /* Info.plist */,
 			);
 			path = Chatapp;
+			sourceTree = "<group>";
+		};
+		8ED576E11E96BDB8008252C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8ED576DB1E96BD6F008252C8 /* PreviewView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8ED576E21E96BDBE008252C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8ED576DC1E96BD6F008252C8 /* CameraViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8ED576E31E96BDC4008252C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8ED576E61E96F31E008252C8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8ED576E71E96F355008252C8 /* CameraVCDelegate.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +165,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED576E51E96CB74008252C8 /* Main.storyboard in Resources */,
 				8ED576D41E969917008252C8 /* LaunchScreen.storyboard in Resources */,
 				8ED576D11E969917008252C8 /* Assets.xcassets in Resources */,
-				8ED576CF1E969917008252C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,22 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED576CC1E969917008252C8 /* ViewController.swift in Sources */,
+				8ED576DF1E96BD6F008252C8 /* CameraViewController.swift in Sources */,
+				8ED576E81E96F355008252C8 /* CameraVCDelegate.swift in Sources */,
 				8ED576CA1E969917008252C8 /* AppDelegate.swift in Sources */,
+				8ED576E01E96BD6F008252C8 /* PhotoCaptureDelegate.swift in Sources */,
+				8ED576DE1E96BD6F008252C8 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8ED576CD1E969917008252C8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8ED576CE1E969917008252C8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8ED576D21E969917008252C8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -265,6 +301,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2QBZLQ669A;
 				INFOPLIST_FILE = Chatapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikebarone.Chatapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -278,6 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2QBZLQ669A;
 				INFOPLIST_FILE = Chatapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikebarone.Chatapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,6 +342,7 @@
 				8ED576DA1E969917008252C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
