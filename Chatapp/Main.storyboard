@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aTh-kX-SL8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -171,7 +171,7 @@
                                             <action selector="toggleMovieRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9R7-Ok-FpB"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FAC-co-10c">
+                                    <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="FAC-co-10c">
                                         <rect key="frame" x="136" y="569" width="103" height="29"/>
                                         <segments>
                                             <segment title="Photo"/>
@@ -200,7 +200,7 @@
                                             <action selector="changeCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3W0-h3-6fc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCj-6P-mHF" userLabel="Still">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCj-6P-mHF" userLabel="Still">
                                         <rect key="frame" x="59" y="617" width="80" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -256,7 +256,7 @@
                                     <action selector="resumeInterruptedSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7T-5Z-tfn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI6-gV-W7d">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI6-gV-W7d">
                                 <rect key="frame" x="87.5" y="8" width="200" height="36"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -275,7 +275,7 @@
                                     <action selector="toggleLivePhotoMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JqX-wJ-Xf1"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pii-2r-R2l">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pii-2r-R2l">
                                 <rect key="frame" x="167.5" y="52" width="40" height="25"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -321,6 +321,7 @@
                         <outlet property="recordButton" destination="eRT-dK-6dM" id="iqk-en-NsW"/>
                         <outlet property="resumeButton" destination="FZr-Ip-7WL" id="tX5-Sx-rQK"/>
                         <segue destination="QNh-MV-1kT" kind="presentation" identifier="LoginVC" id="O2W-lr-KbR"/>
+                        <segue destination="aTh-kX-SL8" kind="show" identifier="UsersVC" id="LXm-HB-X0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -344,8 +345,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="vSb-Xa-o7g">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.23702579736709595" green="0.78343099355697632" blue="0.24824738502502441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="peU-ia-NMd"/>
+                                </constraints>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5UQ-zz-8nR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="tintColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Send a Snap" id="9uh-hK-bnR">
+                                        <barButtonItem key="rightBarButtonItem" image="send_snap" id="PNS-cO-7WE">
+                                            <connections>
+                                                <action selector="sendSnapPressed:" destination="aTh-kX-SL8" id="Zp6-iQ-duc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lV7-LW-c7Y">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="55" id="oBW-9e-6ZP" customClass="UserCell" customModule="Chatapp" customModuleProvider="target">
@@ -377,25 +400,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="vSb-Xa-o7g">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" red="0.23702579736709595" green="0.78343099355697632" blue="0.24824738502502441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="GPm-Uz-2lN"/>
-                                </constraints>
-                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vSb-Xa-o7g" firstAttribute="top" secondItem="V3t-WE-brX" secondAttribute="top" id="5pR-yb-WtD"/>
-                            <constraint firstAttribute="trailing" secondItem="lV7-LW-c7Y" secondAttribute="trailing" id="6mC-I6-PGU"/>
-                            <constraint firstItem="pzs-24-6cv" firstAttribute="top" secondItem="lV7-LW-c7Y" secondAttribute="bottom" id="9BL-1T-60V"/>
-                            <constraint firstItem="lV7-LW-c7Y" firstAttribute="top" secondItem="vSb-Xa-o7g" secondAttribute="bottom" id="YNx-XJ-Vbx"/>
-                            <constraint firstItem="vSb-Xa-o7g" firstAttribute="leading" secondItem="V3t-WE-brX" secondAttribute="leading" id="mZ7-R7-Eld"/>
-                            <constraint firstAttribute="trailing" secondItem="vSb-Xa-o7g" secondAttribute="trailing" id="s0I-F9-uEt"/>
-                            <constraint firstItem="lV7-LW-c7Y" firstAttribute="leading" secondItem="V3t-WE-brX" secondAttribute="leading" id="uZx-yh-w4m"/>
+                            <constraint firstAttribute="trailing" secondItem="lV7-LW-c7Y" secondAttribute="trailing" id="4fT-gm-Dwg"/>
+                            <constraint firstItem="pzs-24-6cv" firstAttribute="top" secondItem="lV7-LW-c7Y" secondAttribute="bottom" id="Bkg-s6-ngT"/>
+                            <constraint firstItem="5UQ-zz-8nR" firstAttribute="leading" secondItem="V3t-WE-brX" secondAttribute="leading" id="E0d-FQ-yP9"/>
+                            <constraint firstAttribute="trailing" secondItem="5UQ-zz-8nR" secondAttribute="trailing" id="JgC-L5-n5N"/>
+                            <constraint firstItem="vSb-Xa-o7g" firstAttribute="top" secondItem="5UQ-zz-8nR" secondAttribute="bottom" id="PSc-V9-aON"/>
+                            <constraint firstItem="lV7-LW-c7Y" firstAttribute="leading" secondItem="V3t-WE-brX" secondAttribute="leading" id="SDD-Xk-JiI"/>
+                            <constraint firstItem="5UQ-zz-8nR" firstAttribute="top" secondItem="V3t-WE-brX" secondAttribute="top" constant="20" id="qmg-zh-2a2"/>
+                            <constraint firstAttribute="trailing" secondItem="vSb-Xa-o7g" secondAttribute="trailing" id="tJL-dh-vRQ"/>
+                            <constraint firstItem="lV7-LW-c7Y" firstAttribute="top" secondItem="vSb-Xa-o7g" secondAttribute="bottom" id="twW-Vt-RMN"/>
+                            <constraint firstItem="vSb-Xa-o7g" firstAttribute="leading" secondItem="V3t-WE-brX" secondAttribute="leading" id="y6j-MS-KYY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -411,6 +428,7 @@
         <image name="backchat" width="800" height="1000"/>
         <image name="camera_icon_snap" width="29" height="24"/>
         <image name="createsnap_btn" width="30" height="30"/>
+        <image name="send_snap" width="24" height="23"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

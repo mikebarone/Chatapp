@@ -79,6 +79,34 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
             performSegue(withIdentifier: "LoginVC", sender: nil)
             return
         }
+        
+        jumpToVideoMode()
+    }
+    
+    func jumpToVideoMode() {
+        livePhotoModeButton.isHidden = true
+        
+        sessionQueue.async { [unowned self] in
+            let movieFileOutput = AVCaptureMovieFileOutput()
+            
+            if self.session.canAddOutput(movieFileOutput) {
+                self.session.beginConfiguration()
+                self.session.addOutput(movieFileOutput)
+                self.session.sessionPreset = AVCaptureSessionPresetHigh
+                if let connection = movieFileOutput.connection(withMediaType: AVMediaTypeVideo) {
+                    if connection.isVideoStabilizationSupported {
+                        connection.preferredVideoStabilizationMode = .auto
+                    }
+                }
+                self.session.commitConfiguration()
+                
+                self.movieFileOutput = movieFileOutput
+                
+                DispatchQueue.main.async { [unowned self] in
+                    self.shouldEnableRecordUI(enabled: true)
+                }
+            }
+        }
     }
     
     func shouldEnableCameraUI(enabled: Bool) {
@@ -97,6 +125,34 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     
     func canStartRecording() {
         print("Recording can start")
+    }
+    
+    func videoRecordingComplete(videoURL: URL) {
+        performSegue(withIdentifier: "UsersVC", sender: ["videoURL":videoURL])
+    }
+    
+    func videoRecordingFailed() {
+        
+    }
+    
+    func snapshotTaken(snapshotData: NSData) {
+        
+    }
+    
+    func snapshotFailed() {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let usersVC = segue.destination as? UsersVC {
+            if let videoDict = sender as? Dictionary<String, URL> {
+                let url = videoDict["videoURL"]
+                usersVC.videoURL = url
+            } else if let snapDict = sender as? Dictionary<String, Data> {
+                let snapData = snapDict["snapshotData"]
+                usersVC.snapData = snapData
+            }
+        }
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -746,11 +802,15 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 		if error != nil {
 			print("Movie file finishing error: \(error)")
 			success = (((error as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)!
+            self.videoRecordingFailed()
 		}
 		
 		if success {
+            
+            self.videoRecordingComplete(videoURL: outputFileURL)
+            
 			// Check authorization status.
-			PHPhotoLibrary.requestAuthorization { status in
+			/*PHPhotoLibrary.requestAuthorization { status in
 				if status == .authorized {
 					// Save the movie file to the photo library and cleanup.
 					PHPhotoLibrary.shared().performChanges({
@@ -769,9 +829,11 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 				else {
 					cleanup()
 				}
-			}
+			}*/
+            
 		}
 		else {
+            self.videoRecordingFailed()
 			cleanup()
 		}
 		

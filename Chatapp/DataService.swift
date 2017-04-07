@@ -11,6 +11,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 let FIR_CHILD_USERS = "users"
+let STORAGE_BASE = FIRStorage.storage().reference()
 
 class DataService {
     private static let _instance = DataService()
@@ -25,6 +26,18 @@ class DataService {
     
     var usersRef: FIRDatabaseReference {
         return mainRef.child(FIR_CHILD_USERS)
+    }
+    
+    var mainStorageRef: FIRStorageReference {
+        return STORAGE_BASE
+    }
+    
+    var imagesStorageRef: FIRStorageReference {
+        return mainStorageRef.child("images")
+    }
+    
+    var videoStorageRef: FIRStorageReference {
+        return mainStorageRef.child("videos")
     }
     
     func saveUser(uid: String) {
